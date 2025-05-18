@@ -13,12 +13,12 @@ def inserir_dado(umidade, ph, fosforo, potassio, bomba):
     conn.commit()
 
 # Consulta
-def listar_dados(min: str | None = ..., max:str | None = ..., date_options: bool = False):
+def listar_dados(min: str | None = ..., date_options: bool = False):
     if date_options == True:
-        cursor.execute(f'SELECT * FROM sensores where time between {min} and {max}')
+        dataframe = pd.read_sql(f"SELECT * FROM sensores where time like '{min}%'", conn)
     else:
-        cursor.execute('SELECT * FROM sensores')
-    return cursor.fetchall()
+        dataframe = pd.read_sql('SELECT * FROM sensores', conn)
+    return dataframe
 
 # Atualizar dado
 def atualizar_dado(id, campo, valor):
@@ -79,19 +79,24 @@ R: '''))
                 try:
                     option_2 = int(input('Deseja fazer a consulta com um range de data?\n1-SIM\n2-NÃO\nR: '))
                     if  option_2 == 1:
-                        date_min = input('Digite a data minima que deseja pesquisar seguinte o padrão ANO-MES-DIA\nR: ')
-                        date_max = input('Digite a data maxima que deseja pesquisar seguinte o padrão ANO-MES-DIA\nR: ')
-                        df = listar_dados(date_min, date_max, True)
+                        date = input('Digite o ano-mês de extraçã: ')
+                        df = listar_dados(date, True)
                     else:
                         df = listar_dados()
                     os.system('cls')
                     print(df)
-                    input('Aperte enter para voltar ao MENU')
+                    option_2_extract = int(input('Deseja extrair os dados\n1-SIM\n2-NÃO\nR: '))
+                    if option_2_extract == 1:
+                        path = input('Digite o caminho onde deseja salvar o arquivo:')
+                        df.to_excel(rf'{path}/extração_dados_sensores.xlsx', index=False)
+                    elif 2:
+                        input('Aperte enter para voltar ao MENU')
+                    
                 ## Armazena os dados de cadastro em formato de dicionário
                 except Exception as e:
                     os.system('cls')
                     print(f'ERRO: {e}')
-                    time.sleep(2)
+                    time.sleep(2)       
 
 
             case 5:
