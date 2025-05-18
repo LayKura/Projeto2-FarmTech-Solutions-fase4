@@ -29,7 +29,7 @@ def atualizar_dado(id, campo, valor):
 
 # Remover dado
 def deletar_dado(id):
-    cursor.execute('DELETE FROM sensores WHERE id = ?', (id,))
+    cursor.execute('DELETE FROM sensores WHERE id = :1', (id,))
     conn.commit()
 
 while True:
@@ -98,6 +98,18 @@ R: '''))
                     print(f'ERRO: {e}')
                     time.sleep(2)       
 
+            case 4:
+                os.system('cls')
+                try:
+
+                ## Captura o ID que o usuário deseja limpar
+                    id = int(input("Digite o ID que deseja eliminar do banco de dados: "))
+                    deletar_dado(id)
+                except:
+                    print('Algo deu errado!')
+                    time.sleep(3)
+                    continue
+                os.system('cls')
 
             case 5:
                 conn.close()
