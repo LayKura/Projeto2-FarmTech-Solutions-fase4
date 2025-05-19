@@ -147,11 +147,9 @@ pip install pandas oracledb matplotlib streamlit requests openpyxl
 python código.py
 ```
 3. Execute o dashboard
-Via terminal:
-```
-streamlit run dashboard.py
-```
-Ou com duplo clique em rodar_dashboard.bat (no Windows)
+Com duplo clique, selecione rodar_dashboard.bat na pasta Scripts
+Logo após a execução do arquivo.bat, será perguntado qual mês de consulta dos dados, basta inserir.
+OBS: Os dados disponiveis no banco são apenas do mês 05
 
 4. Simular dados automáticos
 Descomente o código em gerador de dados.py e execute:
