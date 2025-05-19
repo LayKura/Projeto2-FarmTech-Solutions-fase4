@@ -23,8 +23,8 @@ def listar_dados(min: str | None = ..., date_options: bool = False):
 # Atualizar dado
 def atualizar_dado(id, campo, valor):
     cursor.execute(f'''
-    UPDATE sensores SET {campo} = ? WHERE id = ?
-    ''', (valor, id))
+    UPDATE sensores SET {campo} = {valor} WHERE id = {id}
+    ''')
     conn.commit()
 
 # Remover dado
@@ -96,7 +96,25 @@ R: '''))
                 except Exception as e:
                     os.system('cls')
                     print(f'ERRO: {e}')
-                    time.sleep(2)       
+                    time.sleep(2)
+
+            case 3:
+                try:
+                    id = input('Digite o ID que deseja atualizar: ')
+                    campo = input('Digite qual campo deseja alterar: ')
+                    valor = input('Digite o valor que deseja atribuir ao campo: ')
+                    if campo.upper() in ['PH', 'FOSFORO', 'POTASSIO']:
+                        valor = int(valor)
+                    elif campo.upper() == 'UMIDADE':
+                        valor = float(valor)
+                         
+                    atualizar_dado(id, campo, valor)
+
+                except Exception as e:
+                    os.system('cls')
+                    print(f'ERRO: {e}\nO preenchimento foi feito de forma inadequada\nVerifique os dados que estão sendo alterados e se os mesmo correspondem ao campo')
+                    time.sleep(2)
+
 
             case 4:
                 os.system('cls')
@@ -110,6 +128,7 @@ R: '''))
                     time.sleep(3)
                     continue
                 os.system('cls')
+                input(f'O id {id} foi eliminado do banco de dados')
 
             case 5:
                 conn.close()

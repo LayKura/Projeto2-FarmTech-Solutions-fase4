@@ -1,14 +1,23 @@
-import streamlit as st
-import pandas as pd
-import oracledb
-import matplotlib.pyplot as plt
+import streamlit as st, os, pandas as pd, oracledb, matplotlib.pyplot as plt
 
-conn = oracledb.connect(user='rm562274', password='090402', dns='oracle.fiap.com.br:1521/ORCL')
-df = pd.read_sql_query("SELECT * FROM sensores", conn)
+conn = oracledb.connect(user='rm562274', password='090402', dsn='oracle.fiap.com.br:1521/ORCL')
+cursor = conn.cursor()
 
-st.title("Dashboard do Sistema de Irrigação")
+# Consulta dados
+mes = input('Digite o mês que deseja vizualizar no dashboard')
+df = pd.read_sql_query(f"SELECT * FROM sensores where TIME like '%{mes}%' ORDER BY time DESC", conn)
 
-st.line_chart(df[['umidade']])
-st.line_chart(df[['ph']])
+# Título
+st.title("Dashboard - Sistema de Irrigação Inteligente")
 
-st.bar_chart(df['bomba'].value_counts())
+# Exibe a tabela
+st.subheader("Leituras dos Sensores")
+st.dataframe(df)
+
+# Gráfico de Umidade
+st.subheader("Umidade ao longo do tempo")
+st.line_chart(df[['UMIDADE']])
+
+# Gráfico de pH
+st.subheader("pH ao longo do tempo")
+st.line_chart(df[['PH']])
