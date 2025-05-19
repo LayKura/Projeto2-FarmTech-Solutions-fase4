@@ -1,6 +1,22 @@
-import oracledb, pandas as pd, datetime, os, time
+import oracledb, pandas as pd, datetime, os, time, requests
 
-conn = oracledb.connect(user='rm562274', password='090402', dsn='oracle.fiap.com.br:1521/ORCL')
+API_KEY = '7621dd8760f87d562a4e5a21bffbdc36'
+cidade = 'Sao Paulo'
+
+url = f'https://api.openweathermap.org/data/2.5/weather?q={cidade}&appid={API_KEY}&units=metric&lang=pt_br'
+
+def previsao_tempo(url):
+    resposta = requests.get(url).json()
+
+    chuva = resposta.get("rain", {}).get("1h", 0)
+    print("Previsão de chuva (1h):", chuva)
+
+    if chuva > 0:
+        print("Chuva prevista: bomba OFF")
+    else:
+        print("Sem chuva: bomba ON (se necessário)")
+
+conn = oracledb.connect(user='rm562274', password='090402', dsn='oracle.fiap.com.br:1521/ORCL') 
 cursor = conn.cursor()
 
 # Inserção de dado
@@ -34,6 +50,7 @@ def deletar_dado(id):
 
 while True:
     os.system('cls')
+    previsao_tempo(url)
     menu_option = int(input(f'''{'-'*15}
 Seleciona a ação que deseja realizar
 
