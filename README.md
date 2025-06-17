@@ -7,14 +7,13 @@
 <br>
 
 # Nome do projeto
-**Construindo uma maquina agricola**
+**Construindo uma máquina agrícola**
 ## Nome do grupo
 
 ## 👨‍🎓 Integrantes: 
 - Lais Kurahashi
 - Davi Ferreira
-- Lucas Martinelli 
-- <a href="https://www.linkedin.com/company/inova-fusca">Nome do integrante 4</a> 
+- Lucas Martinelli  
 
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
@@ -27,11 +26,19 @@
 
 # 💧 Sistema de Irrigação Inteligente com ESP32 - Simulação Wokwi
 
-Este projeto simula um sistema agrícola automatizado usando um microcontrolador ESP32 na plataforma [Wokwi](https://wokwi.com/). A irrigação é controlada com base na presença de nutrientes (Fósforo e Potássio), no pH e na umidade do solo. Quando detectadas condições inadequadas, a bomba é ativada automaticamente por 30 segundos.
+Este projeto é a continuação e evolução da Fase 3, que consistia em um sistema de irrigação inteligente baseado em sensores simulados na plataforma Wokwi. Na Fase 4, aprimoramos o sistema com:
+
+✔️ Modelo de Machine Learning que decide quando irrigar
+
+✔️ Interface Web com Streamlit
+
+✔️ Histórico de decisões armazenado em banco Oracle
+
+✔️ Integração com API de previsão do tempo (OpenWeatherMap)
 
 ## 🚀 Objetivo
 
-Monitorar as condições do solo e realizar irrigação automática somente quando necessário, otimizando o uso de recursos hídricos na agricultura.
+A proposta é otimizar a irrigação na agricultura, utilizando sensores e técnicas de inteligência artificial para ativar a bomba d’água somente quando necessário, considerando as condições do solo e do clima.
 
 ## 🧠 Sensores Simulados
 
@@ -48,6 +55,18 @@ Monitorar as condições do solo e realizar irrigação automática somente quan
 
 - **Sensor de Umidade:** Sensor DHT22  
   Mede a umidade relativa e simula a umidade do solo.
+
+## Herança da Fase 3
+
+✅ Lógica baseada em sensores (P, K, pH, umidade)
+
+✅ Interface física simulada via Wokwi
+
+✅ Estrutura de arquivos com scripts Python e dashboard
+
+✅ Uso de ESP32, botões, relé, sensor DHT22, LDR etc.
+
+🔗 Projeto da Fase 3 no Wokwi 🔗 [Clique aqui para ver no Wokwi](https://wokwi.com/projects/430519062599046145) 
 
 ## ⚙️ Componentes Utilizados
 
@@ -70,9 +89,20 @@ Monitorar as condições do solo e realizar irrigação automática somente quan
 
 Fósforo: Presente | Potássio: Presente | pH: 7.41 | Umidade: 88.5% -> Irrigação NÃO NECESSÁRIA
 
-## 🖥️ Acesse o Projeto no Wokwi
+## ⚙️ Melhorias Implementadas na Fase 4
 
-🔗 [Clique aqui para ver no Wokwi](https://wokwi.com/projects/430519062599046145) 
+🤖	Adição de um modelo de Machine Learning (Random Forest) para decidir com base em múltiplos parâmetros
+🌐	Interface gráfica com Streamlit, incluindo várias páginas com navegação
+☁️	Consulta à previsão do tempo (OpenWeatherMap API) antes de acionar a bomba
+🧠	Treinamento e uso de modelo .pkl para previsões automatizadas
+🧾	Página de histórico de decisões, com dados salvos no Oracle
+📊	Página de visualização gráfica do histórico de pH e umidade
+
+## 🖼️ Prints
+🔍 Interface de Decisão com ML
+
+📈 Histórico de Leitura e Irrigação
+
 
 ___
 ## 🌿 Sistema de Irrigação Inteligente — FIAP
@@ -85,6 +115,17 @@ Este projeto simula um sistema de irrigação agrícola que utiliza sensores de 
 |dashboard.py|Dashboard interativo feito com Streamlit que exibe os dados armazenados no banco de forma gráfica (pH e umidade).|
 |gerador de dados.py|	Simulador automático (comentado) para gerar e inserir dados falsos no banco Oracle com base em valores aleatórios.|
 |rodar_dashboard.bat|	Atalho para abrir o dashboard com um clique no Windows (executa streamlit run dashboard.py).|
+
+## 📁 Projeto2-FarmTech-Solutions-fase4/
+│
+├── modelo_preditivo.py          # Treinamento e uso do modelo .pkl
+├── app.py                       # Página principal do Streamlit
+├── pages/                       # Subpáginas do app
+├── scripts_arduino/             # Lógica de controle no ESP32
+├── assets/                      # Imagens e prints
+├── document/                    # Documentos da atividade
+├── README.md                    # Este arquivo
+
 
 ## 🔧 Tecnologias Utilizadas
 - Python 3.10.11
@@ -155,4 +196,21 @@ OBS: Os dados disponiveis no banco são apenas do mês 05
 Descomente o código em gerador de dados.py e execute:
 ``` bash
 python "gerador de dados.py"
+```
+
+📦 Como Executar
+Clone este repositório
+
+```bash
+git clone https://github.com/SEU-USUARIO/Projeto2-FarmTech-Solutions-fase4.git
+```
+
+Instale as dependências
+```bash
+pip install -r requirements.txt
+```
+
+Execute o sistema
+```bash
+streamlit run Página_inicial.py
 ```
