@@ -29,8 +29,6 @@
 
 O projeto simula um sistema agrícola automatizado com o microcontrolador ESP32 na plataforma Wokwi, que monitora nutrientes do solo e realiza irrigação automática. Na Fase 4, foi incorporada uma camada de inteligência artificial com Scikit-learn para prever a necessidade de irrigação com base em dados históricos, além de um dashboard com Streamlit para visualização interativa e melhorias no banco de dados.
 
----
-
 ## 🚀 Objetivo 2.0
 
 Monitorar e prever a necessidade de irrigação com base em dados do solo (umidade, pH, presença de fósforo e potássio), otimizando o uso de recursos hídricos na agricultura moderna.
@@ -101,7 +99,6 @@ Fósforo: Presente | Potássio: Presente | pH: 7.41 | Umidade: 88.5% -> Irrigaç
 
 🔗 [Clique aqui para ver no Wokwi](https://wokwi.com/projects/430519062599046145) 
 
-___
 ## 🌿 Sistema de Irrigação Inteligente — FIAP
 Este projeto simula um sistema de irrigação agrícola que utiliza sensores de umidade, pH, fósforo e potássio para tomar decisões automatizadas sobre o acionamento de uma bomba d’água. Os dados são armazenados em um banco de dados Oracle e podem ser visualizados em tempo real por um dashboard interativo.
 
@@ -180,7 +177,6 @@ Este projeto simula um sistema de irrigação agrícola que utiliza sensores de 
 - pH (4.5 a 8.0)
 - Lógica de ativação da bomba
 
----
 
 ## 📦 Funcionalidades 2.0
 ✅ **1_Exploração_de_dados.py**
@@ -298,7 +294,6 @@ Este projeto simula um sistema de irrigação agrícola que utiliza sensores de 
 - Exportação
 - Salva o modelo como modelo_irrigacao.pkl para ser usado pelo sistema via Streamlit.
 
----
 
 ## 📁 Estrutura de pastas
 
@@ -338,7 +333,6 @@ Descomente o código em gerador de dados.py e execute:
 python "gerador de dados.py"
 ```
 
----
 
 ## 🔧 Como executar o código 2.0
 
@@ -353,4 +347,4 @@ pip install -r requirements.txt
 cd .\scripts
 streamlit run Página_inicial.py
 ```
----
+
