@@ -333,3 +333,27 @@ Descomente o código em gerador de dados.py e execute:
 python "gerador de dados.py"
 ```
 
+## 🔧 Como executar o código 2.0
+
+## 🚀 Como Executar
+1. Instale os pacotes necessários
+``` bash
+pip install -r requirements.txt
+```
+
+2. Entre na pasta scripts e execute o Streamlit
+``` bash
+cd .\scripts
+streamlit run Página_inicial.py
+```
+
+## 📷 Prints Streamlit 
+![image](https://github.com/user-attachments/assets/133bf474-69f4-448c-8601-005f32a9932a)
+![image](https://github.com/user-attachments/assets/ace2300b-61b3-466a-aabe-0ca376f7a74c)
+![image](https://github.com/user-attachments/assets/b8e8ba72-ea70-4034-b959-ebd6906f9bdc)
+![image](https://github.com/user-attachments/assets/c6421de0-80fa-474c-b739-cbc190108d8f)
+![image](https://github.com/user-attachments/assets/b887205b-df08-4724-9839-6241d6234fea)
+![image](https://github.com/user-attachments/assets/d50bd404-31cd-4292-882f-8fc116ca5a87)
+![image](https://github.com/user-attachments/assets/d4e3f187-35fa-49f7-8b4c-9d540c0a1635)
+![image](https://github.com/user-attachments/assets/870693ce-46c6-46c8-98ce-64f41854b83f)
+
