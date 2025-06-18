@@ -8,13 +8,13 @@
 
 # 🌾 FarmTech Solutions — Fase 4 
 
-**Construindo uma máquina agrícola**
+# **Construindo uma máquina agrícola**
 
 ## 👨‍🎓 Integrantes: 
 - Lais Kurahashi
 - Davi Ferreira
 - Lucas Martinelli
-- 
+  
 ## 👩‍🏫 Professores:
 ### Tutor(a) 
 - Lucas Gomes Moreira
