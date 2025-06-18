@@ -348,3 +348,10 @@ cd .\scripts
 streamlit run Página_inicial.py
 ```
 
+## 📷 Prints Streamlit 
+![image](https://github.com/user-attachments/assets/133bf474-69f4-448c-8601-005f32a9932a)
+![image](https://github.com/user-attachments/assets/ace2300b-61b3-466a-aabe-0ca376f7a74c)
+![image](https://github.com/user-attachments/assets/b8e8ba72-ea70-4034-b959-ebd6906f9bdc)
+![image](https://github.com/user-attachments/assets/870693ce-46c6-46c8-98ce-64f41854b83f)
+
+
