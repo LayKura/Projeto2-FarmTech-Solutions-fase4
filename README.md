@@ -99,6 +99,9 @@ Fósforo: Presente | Potássio: Presente | pH: 7.41 | Umidade: 88.5% -> Irrigaç
 
 🔗 [Clique aqui para ver no Wokwi](https://wokwi.com/projects/430519062599046145) 
 
+## Projeto Wokwi 2.0
+🔗 [Clique aqui para ver no Wokwi](https://wokwi.com/projects/434288474938394625)
+
 ## 🌿 Sistema de Irrigação Inteligente — FIAP
 Este projeto simula um sistema de irrigação agrícola que utiliza sensores de umidade, pH, fósforo e potássio para tomar decisões automatizadas sobre o acionamento de uma bomba d’água. Os dados são armazenados em um banco de dados Oracle e podem ser visualizados em tempo real por um dashboard interativo.
 
@@ -347,6 +350,11 @@ cd .\scripts
 streamlit run Página_inicial.py
 ```
 
+## 🎥 Demonstração em vídeo
+
+📺 Assista à demonstração do projeto atualizado da Fase 4 no YouTube:  
+👉 (https://youtu.be/FWo7QYW1er4)
+
 ## 📷 Prints Streamlit 
 ![image](https://github.com/user-attachments/assets/133bf474-69f4-448c-8601-005f32a9932a)
 ![image](https://github.com/user-attachments/assets/ace2300b-61b3-466a-aabe-0ca376f7a74c)
@@ -357,3 +365,5 @@ streamlit run Página_inicial.py
 ![image](https://github.com/user-attachments/assets/d4e3f187-35fa-49f7-8b4c-9d540c0a1635)
 ![image](https://github.com/user-attachments/assets/870693ce-46c6-46c8-98ce-64f41854b83f)
 
+## 📷 Prints Wokwi
+![image](https://github.com/user-attachments/assets/dbec511d-9d41-4662-b59e-26b25042020c)
