@@ -59,7 +59,18 @@ ph_medio = df['pH'].mean()
 st.write(f"- Umidade média do solo: {umidade_media:.2f}%")
 st.write(f"- pH médio do solo: {ph_medio:.2f}")
 
-p_presenca = df['P'].sum()
-k_presenca = df['K'].sum()
-st.write(f"- Número de vezes com presença de Fósforo (P): {p_presenca}")
-st.write(f"- Número de vezes com presença de Potássio (K): {k_presenca}")
+# Converte 'P' e 'K' para valores binários
+df['P_bin'] = df['P'].map({'Presente': 1, 'Ausente': 0})
+df['K_bin'] = df['K'].map({'Presente': 1, 'Ausente': 0})
+
+# Soma presença de nutrientes
+p_presenca = df['P_bin'].sum()
+k_presenca = df['K_bin'].sum()
+
+# Total de registros
+total = len(df)
+
+# Mostra no Streamlit
+st.markdown("### Presença de Nutrientes")
+st.write(f"Fósforo presente em **{p_presenca}** de {total} simulações ({(p_presenca/total)*100:.1f}%)")
+st.write(f"Potássio presente em **{k_presenca}** de {total} simulações ({(k_presenca/total)*100:.1f}%)")
