@@ -27,7 +27,15 @@
 
 **💧 Sistema de Irrigação Inteligente com ESP32 + Análise Preditiva com Scikit-learn**
 
-O projeto simula um sistema agrícola automatizado com o microcontrolador ESP32 na plataforma Wokwi, que monitora nutrientes do solo e realiza irrigação automática. Na Fase 4, foi incorporada uma camada de inteligência artificial com Scikit-learn para prever a necessidade de irrigação com base em dados históricos, além de um dashboard com Streamlit para visualização interativa e melhorias no banco de dados.
+O projeto simula um sistema agrícola automatizado com o microcontrolador ESP32 na plataforma Wokwi, que monitora nutrientes do solo e realiza irrigação automática. Na Fase 4, foi incorporada uma camada de inteligência artificial com Scikit-learn por meio de Python para prever a necessidade de irrigação com base em dados históricos, além de um dashboard com Streamlit para visualização interativa e melhorias no banco de dados.
+
+Além disso, foram implementadas melhorias no sistema baseado em ESP32, com os seguintes objetivos:
+
+- Facilitar a compreensão do código por meio de uma estrutura mais clara e organizada;
+
+- Otimizar o uso de memória, tornando o sistema mais leve e eficiente;
+
+- Incluir um monitor serial, permitindo o acompanhamento em tempo real do funcionamento do sistema, facilitando testes e depuração.
 
 ## 🚀 Objetivo 2.0
 
@@ -42,7 +50,8 @@ Monitorar e prever a necessidade de irrigação com base em dados do solo (umida
 - 📊 **Novo gráfico comparativo:** visualização da relação entre pH, umidade e necessidade de irrigação.
 - 🧼 **Refatoração do código Python:** separação de funções, padronização, validação reforçada.
 - 💾 **Banco de dados aprimorado:** campos melhor estruturados e normalização dos dados.
-- 🖼️ **Serial Plotter (Wokwi):** atualização.
+- 🧠 **Redução do consumo de memoria**: Feito através da otimização de variaveis por meio determinação de datatypes
+- 🖼️ **Monitor Serial (Wokwi):** Inclusão de monitor serial no sistema ESP32
 
 ---
 
@@ -64,23 +73,29 @@ Monitorar e prever a necessidade de irrigação com base em dados do solo (umida
 
 ## ⚙️ Componentes Utilizados
 
-- ESP32
+**ESP32**
 - 2 Botões (P e K)
 - LDR + Resistor
 - Sensor DHT22
 - Relé (representando a bomba)
 - LED indicador da bomba
 - Jumpers e resistores
+- Monitor Serial
 
 ## 🧪 Funcionamento (Fase 3)
-
 - O sistema verifica os sensores a cada ciclo.
 - Se **algum nutriente estiver ausente** ou a umidade for **inferior a 40%**, a irrigação é ativada.
 - A **bomba funciona por 30 segundos** e depois desliga automaticamente.
-- Mensagens são exibidas no monitor serial indicando o status do sistema.
 
 ## 🧪 Funcionamento 2.0
 
+**ESP32**
+- O sistema verifica os sensores a cada ciclo.
+- Se **algum nutriente estiver ausente** ou a umidade for **inferior a 50%**, a irrigação é ativada.
+- A **bomba funciona por 30 segundos** e depois desliga automaticamente.
+-  Mensagens são exibidas no monitor serial incluido no ESP32, indicando status do sistema.
+
+**Python**
 - Interface interativa:
 - Simulador de irrigação -> com sugestões para a tomada de decisão
 - Histórico
